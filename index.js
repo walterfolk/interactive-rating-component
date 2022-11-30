@@ -4,13 +4,12 @@ const submitBtn = document.getElementById('submit-btn');
 const rating = document.getElementById('rating');
 const ratingValue = document.querySelectorAll('.btn');
 
-submitBtn.addEventListener('click', () => {
-  ratingCard.classList.add('hidden');
-  thanksCard.classList.remove('hidden');
-})
-
 ratingValue.forEach((rate) => {
-    rate.addEventListener('click', () => {
-        rating.innerHTML = rate.innerHTML
+  rate.addEventListener('click', () => {
+    rating.innerHTML = rate.innerHTML
+    submitBtn.addEventListener('click', () => {
+      ratingCard.classList.add('hidden');
+      thanksCard.classList.remove('hidden');
     })
-    })
+  })
+})
